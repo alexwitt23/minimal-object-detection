@@ -4,6 +4,16 @@
 Some code to run an object detector in PyTorch with python. This model is not trained at
 all so it won't find anything useful.
 
+## Example Setup
+In a virtual environment:
+
+```
+python3 -m venv ~/.envs/minimal-od
+source ~/.envs/minimal-od/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+```
+
 
 ## Example
 
