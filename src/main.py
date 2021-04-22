@@ -24,8 +24,10 @@ def normalize(
     return img
 
 
-save_path = "/home/mk/project/minimal-object-detection/data/result/"
-testdata_path = "/home/mk/project/minimal-object-detection/data/"
+# save_path = "/home/mk/project/minimal-object-detection/data/result/"
+# testdata_path = "/home/mk/project/minimal-object-detection/data/"
+save_path = "data/result/"
+testdata_path = "data/"
 # image = cv2.imread(
     # "/home/alex/Desktop/projects/minimal-object-detector/src/train/data/images/2020-Toyota-86-GT-TRD-Wheels.jpg"
 # )
