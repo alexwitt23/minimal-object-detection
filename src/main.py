@@ -5,7 +5,7 @@ import torch
 import detector
 
 
-image = cv2.imread("/home/alex/datasets/coco/images/val2017/000000000285.jpg")
+image = cv2.imread("/home/mk/project/minimal-object-detection/data/redcar.jpg")
 image = cv2.resize(image, (512, 512))
 
 
