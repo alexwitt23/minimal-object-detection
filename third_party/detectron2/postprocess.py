@@ -73,7 +73,7 @@ class PostProcessor:
     def __init__(
         self,
         num_classes: int,
-        image_size: int,
+        image_size: Tuple[int, int],
         all_anchors: torch.Tensor,
         regressor: regression.Regressor,
         score_threshold: float = 0.1,
@@ -97,7 +97,7 @@ class PostProcessor:
 
         """
         self.num_classes = num_classes
-        self.image_size = torch.Tensor([image_size]).float()
+        self.image_size = torch.Tensor(image_size * 2).float()
         self.regressor = regressor
         self.all_anchors = all_anchors
         self.score_threshold = score_threshold
