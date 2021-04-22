@@ -24,16 +24,15 @@ def normalize(
     return img
 
 
-# save_path = "/home/mk/project/minimal-object-detection/data/result/"
-# testdata_path = "/home/mk/project/minimal-object-detection/data/"
 save_path = "data/result/"
 testdata_path = "data/"
+num_data = 8
 # image = cv2.imread(
     # "/home/alex/Desktop/projects/minimal-object-detector/src/train/data/images/2020-Toyota-86-GT-TRD-Wheels.jpg"
 # )
-for i in range(6):
+for i in range(num_data):
     filename= testdata_path+str(i)+".jpg"
-    print("filename", filename)
+    print("test filename", filename)
     image = cv2.imread(filename)
     image_ori = cv2.resize(image, (512, 512))
     image = normalize(image_ori)
@@ -49,12 +48,13 @@ for i in range(6):
         boxes = model.get_boxes(image.permute(2, 0, 1).unsqueeze(0))
 
     for box in boxes[0]:
-        print(box)
+        # print(box)
+        # print(box.confidence)
+        confidence = float(box.confidence)
         box = (box.box * torch.Tensor([512] * 4)).int().tolist()
-        cv2.rectangle(image_ori, (box[0], box[1]), (box[2], box[3]), (255, 0, 0), 2)
+        if confidence>0.35:
+            # print(box)
+            cv2.rectangle(image_ori, (box[0], box[1]), (box[2], box[3]), (255, 0, 0), 2)
 
-# <<<<<<< HEAD
-# print(boxes)
-# =======
     savefilename=save_path+str(i)+".jpg"
     cv2.imwrite(savefilename, image_ori)
