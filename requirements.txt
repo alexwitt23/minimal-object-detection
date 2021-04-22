@@ -3,3 +3,5 @@ opencv-python
 torch==1.7.1
 torchvision
 dataclasses
+pyyaml
+albumentations
