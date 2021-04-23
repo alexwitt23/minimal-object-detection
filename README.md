@@ -1,11 +1,16 @@
-# Minimal Object Detector
+# Tire Detector
 
+Eveything needed to train an an object detector in PyTorch with python3.
 
-Some code to run an object detector in PyTorch with python. This model is not trained at
-all so it won't find anything useful.
+## Setup
 
-## Example Setup
-In a virtual environment:
+All that's needed is to install the requirements with:
+
+```
+python3 -m pip install -r requirements.txt
+```
+
+You might also choose to install in a virtual environment:
 
 ```
 python3 -m venv ~/.envs/minimal-od
